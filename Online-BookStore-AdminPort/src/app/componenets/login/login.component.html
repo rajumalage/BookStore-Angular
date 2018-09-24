@@ -1,0 +1,37 @@
+<div id="login">
+  <div [hidden]="loggedIn">
+    <form class="form-signin" (ngSubmit)="onSubmit()">
+      <h1 class="h3 mb-3 font-weight-normal">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Please sign in</h1>
+      <label for="username" class="sr-only">User name</label>
+      <input type="text" name="username" id="username" [(ngModel)]="credential.username" class="form-control" placeholder="User Name" required autofocus>
+      <br>
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" name="password" id="password" [(ngModel)]="credential.password" class="form-control" placeholder="Password" required>
+    <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+		</div>
+		<div [hidden]="!loggedIn">
+					<h2>You Have Logged In!</h2>
+		</div>
+</div>
+
+<!-- <div class="container">
+	<div [hidden]="loggedIn">
+		<mat-grid-list cols="6" [style.margin-top]="'20px'">
+			<mat-grid-tile [colspan]="1"></mat-grid-tile>
+			<mat-grid-tile [colspan]="4">
+				<form (ngSubmit)="onSubmit()">
+					<mat-input-container class="full-width">
+						<input type="text" matInput [(ngModel)]="credential.username" name="username" id='username' placeholder="Your Username">
+					</mat-input-container>
+					<mat-input-container class="full-width">
+						<input type="password" matInput [(ngModel)]="credential.password" name="password" id='password' placeholder="Your Password">
+					</mat-input-container>
+					<button md-raised-button type="submit" class="mat-primary">Login</button>
+				</form>
+			</mat-grid-tile>
+
+		</mat-grid-list>
+	</div>
+</div> -->
